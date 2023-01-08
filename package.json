@@ -9,7 +9,7 @@
     "url": "https://github.com/seancdavis/node-link-checker"
   },
   "scripts": {
-    "check-links": "nodex index.js"
+    "check-links": "node index.js"
   },
   "dependencies": {
     "chalk": "^5.2.0",
