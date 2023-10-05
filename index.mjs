@@ -52,7 +52,11 @@ export const checkerStart = async (url) => {
         let obj = {};
         if (brokenLink.status === 0 ) {
           if (0 < brokenLink.failureDetails.length) {
-            obj.status = brokenLink.failureDetails[0].code
+            if (brokenLink.failureDetails[0].code === undefined) {
+              obj.status = brokenLink.failureDetails[0].type;
+            } else {
+              obj.status = brokenLink.failureDetails[0].code;
+            }
             obj.message = brokenLink.failureDetails[0].message;
           } else {
             obj.status = brokenLink.status;  
